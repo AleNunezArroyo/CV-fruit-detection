@@ -1,1 +1,4 @@
 pip3 install opencv-python
+# Ubuntu code 
+sudo apt-get install v4l-utils
+v4l2-ctl --list-devices
