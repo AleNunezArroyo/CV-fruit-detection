@@ -33,7 +33,13 @@ while(True):
     # the 'q' button is set as the
     # quitting button you may use any
     # desired button of your choice
-
+    
+    # path = '/home/ale/Desktop/images-test'
+    path = '/home/ale/Desktop/images-test/apple'
+    cv2.imwrite(os.path.join(path , 'apple'+str(counter)+'.png'),frame2)
+    counter = counter + 1
+    print("Toma foto..")
+    time.sleep(6)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
     
