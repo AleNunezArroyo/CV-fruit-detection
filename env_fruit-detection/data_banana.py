@@ -23,7 +23,7 @@ while(True):
     # desired button of your choice
     
     # path = '/home/ale/Desktop/nDATASET/con_fondo_bolsa_banana'
-    path = '/home/ale/Desktop/nDATASET/con_fondo_bolsa_granadilla'
+    path = '/home/ale/Desktop/detection'
     
     # time.sleep(6)
     if cv2.waitKey(1) & 0xFF == ord('t'):
@@ -31,7 +31,6 @@ while(True):
         # cv2.imwrite(os.path.join(path , 'fruta_con_fondo_bolsa_banana'+str(counter)+'.png'),frame1)
         # cv2.imwrite(os.path.join(path , 'numero_con_fondo_bolsa_banana'+str(counter)+'.png'),frame2)
         cv2.imwrite(os.path.join(path , 'fruta_con_fondo_bolsa_granadilla'+str(counter)+'.png'),frame1)
-        cv2.imwrite(os.path.join(path , 'numero_con_fondo_bolsa_granadilla'+str(counter)+'.png'),frame2)
         counter = counter + 1
         print("Toma foto..")
     if cv2.waitKey(1) & 0xFF == ord('q'):
