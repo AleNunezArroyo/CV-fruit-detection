@@ -6,9 +6,6 @@ import os
 # define a video capture object
 
 # CV 
-# !pip3 install transformers
-
-from transformers import BeitFeatureExtractor, BeitForImageClassification
 from PIL import Image
 import requests
 
@@ -30,26 +27,13 @@ while(True):
     # desired button of your choice
     
     # path = '/home/ale/Desktop/nDATASET/con_fondo_bolsa_banana'
-    path = '/home/ale/Desktop/detection'
+    path = '/home/ale/Documents/GitHub/CV-fruit-detection/test'
     
     # time.sleep(6)
     if cv2.waitKey(1) & 0xFF == ord('t'):
         cv2.imwrite(os.path.join(path , 'detection'+str(counter)+'.png'),frame1)
         counter = counter + 1
-        print("Toma foto..")
-        
-        image = Image.open('/home/ale/Desktop/detection/'++str(counter)+'.png')
-        image = image.convert('RGB')
-        
-        feature_extractor = BeitFeatureExtractor.from_pretrained('microsoft/beit-large-patch16-512')
-        model = BeitForImageClassification.from_pretrained('microsoft/beit-large-patch16-512')
-
-        inputs = feature_extractor(images=image, return_tensors="pt")
-        outputs = model(**inputs)
-        logits = outputs.logits
-        # model predicts one of the 1000 ImageNet classes
-        predicted_class_idx = logits.argmax(-1).item()
-        print("Predicted class:", model.config.id2label[predicted_class_idx])
+        print("Guardando foto..")
         
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
